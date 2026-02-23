@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// Import the Provider and the Modal
 import { CompareProvider } from "@/src/context/CompareContext";
 import CompareModal from "@/src/components/university/CompareModal";
 

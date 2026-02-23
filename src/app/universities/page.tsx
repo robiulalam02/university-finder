@@ -4,6 +4,8 @@ import UniversityCard from "@/src/components/university/UniversityCard";
 import Pagination from "@/src/components/university/Pagination";
 import { FilterParams } from "@/src/types";
 import { Search, GraduationCap, Sparkles } from "lucide-react";
+import bgImg from '@/src/assets/background.webp'
+import Image from "next/image";
 
 export default async function UniversitiesPage({
   searchParams,
@@ -19,10 +21,13 @@ export default async function UniversitiesPage({
       <header className="relative h-60 w-full overflow-hidden flex items-center bg-slate-900">
         {/* Background Image - Modern University Architecture */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2086&auto=format&fit=crop"
+          <Image
+            src={bgImg}
             alt="Global University Campus"
-            className="h-full w-full object-cover opacity-50 mix-blend-luminosity"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-50 mix-blend-luminosity"
           />
           {/* Gradient Overlay for professional contrast */}
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />

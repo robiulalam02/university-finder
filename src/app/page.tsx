@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image"; // Import the Next.js Image component
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { GraduationCap, ArrowRight, Search, Globe, Sparkles } from "lucide-react";
 import bgImg from '@/src/assets/campus.jpg'
@@ -16,10 +16,11 @@ export default function Home() {
                     <Image
                         src={bgImg}
                         alt="University Campus"
-                        fill // Tells Next.js to fill the parent container
-                        priority // Preloads the image for better LCP (Performance)
+                        fill
+                        placeholder="blur"
+                        priority
                         className="object-cover"
-                        quality={90}
+                        sizes="100vw"
                     />
                     {/* Professional Overlay for Text Readability */}
                     <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px] bg-gradient-to-b from-slate-900/40 via-slate-900/20 to-white" />

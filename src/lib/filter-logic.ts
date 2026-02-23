@@ -2,7 +2,6 @@ import { universities } from "./data";
 import { FilterParams } from "@/src/types";
 
 export async function getFilteredUniversities(params: FilterParams) {
-    // Simulate network delay for that professional "loading" feel
     await new Promise((resolve) => setTimeout(resolve, 400));
 
     const allFiltered = universities.filter((uni) => {
@@ -14,23 +13,21 @@ export async function getFilteredUniversities(params: FilterParams) {
         const matchCountry = !params.country ||
             uni.country === params.country;
 
-        // 3. Ranking Filter (Max Ranking)
+        // 3. Ranking Filter
         const matchRanking = !params.minRanking ||
             uni.ranking <= parseInt(params.minRanking);
 
-        // 4. IELTS Filter (Matches exact score selected)
+        // 4. IELTS Filter
         const matchIelts = !params.ielts ||
             uni.ieltsScore <= parseFloat(params.ielts);
 
-        // 5. Course Filter - NEW
-        // Checks if the university offers a course matching the search string
+        // 5. Course Filter
         const matchCourse = !params.course ||
             (uni.courses && uni.courses.some(c =>
                 c.toLowerCase().includes(params.course!.toLowerCase())
             ));
 
-        // 6. Tuition Fee Filter - Updated for Slider
-        // We use params.maxFee from the slider. If not set, we show all (up to 100k)
+        // 6. Tuition Fee Filter
         const maxFeeLimit = params.maxFee ? parseInt(params.maxFee) : 100000;
         const matchFee = uni.tuitionFee <= maxFeeLimit;
 
