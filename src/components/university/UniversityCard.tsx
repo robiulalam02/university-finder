@@ -89,13 +89,13 @@ export default function UniversityCard({ university }: { university: University 
                 </div>
 
                 <div className="flex gap-2">
-                    <button className="flex-[2] relative overflow-hidden rounded-xl bg-slate-900 py-3 text-xs font-bold tracking-widest text-white transition-all hover:bg-blue-600 hover:shadow-lg active:scale-95">
+                    <button className="flex-[2] cursor-pointer relative overflow-hidden rounded-xl bg-slate-900 py-3 text-xs font-bold tracking-widest text-white transition-all hover:bg-blue-600 hover:shadow-lg active:scale-95">
                         ENROLL NOW
                     </button>
 
                     <button
                         onClick={() => toggleComparison(university)}
-                        className={`flex-1 relative flex items-center justify-center gap-2 rounded-xl border text-[10px] font-black tracking-widest transition-all active:scale-90 ${isSelected
+                        className={`flex-1 relative flex items-center justify-center gap-2 rounded-xl border text-[10px] cursor-pointer font-black tracking-widest transition-all active:scale-90 ${isSelected
                             ? "border-blue-600 bg-blue-600 text-white shadow-md shadow-blue-200"
                             : "border-slate-200 bg-white text-slate-500 hover:border-blue-400 hover:text-blue-600"
                             }`}

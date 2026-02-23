@@ -32,7 +32,7 @@ export default function FilterSidebar() {
 
             <div className="space-y-3">
                 <label className="flex items-center gap-2 text-sm font-bold text-slate-700">
-                    <BookOpen className="h-4 w-4 text-blue-500" /> Course Area
+                    <BookOpen className="h-4 w-4 text-blue-500" /> Search Courses
                 </label>
                 <input
                     type="text"
@@ -140,9 +140,10 @@ export default function FilterSidebar() {
                 <div className="grid grid-cols-3 gap-2">
                     {['6.0', '6.5', '7.0'].map((score) => (
                         <button
+                            aria-label={`Select IELTS score ${score}`}
                             key={score}
                             onClick={() => handleFilterChange("ielts", score)}
-                            className={`rounded-xl py-2.5 text-xs font-bold border transition-all active:scale-95 ${searchParams.get("ielts") === score
+                            className={`rounded-xl cursor-pointer py-2.5 text-xs font-bold border transition-all active:scale-95 ${searchParams.get("ielts") === score
                                 ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-100'
                                 : 'bg-white text-slate-600 border-slate-200 hover:border-blue-300'
                                 }`}
